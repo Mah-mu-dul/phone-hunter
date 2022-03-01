@@ -1,4 +1,20 @@
 .card{
-    padding: 20px;
-    background-color: rgba(238, 149, 198, 0.384) !important;
+    padding: 10px;
+    background-color: rgba(248, 242, 246, 0.384) !important;
+    
+}
+.cardHolder{
+    background-color: rgb(236, 220, 220);
+    margin: 0,auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.detailsHolder{
+    border: 1px solid powderblue;
+    padding: 1rem;
+    margin: 1rem;
+}
+.button{
+    margin: 0,auto;
 }

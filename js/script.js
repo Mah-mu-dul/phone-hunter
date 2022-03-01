@@ -4,40 +4,37 @@ const phoneSearch = (name) =>{
     .then(res => res.json())
     .then(data => brand(data))
 }   
-
+const returnPhoneSearchData = (data) =>{
+    return data
+}
 
 const brand = (data) =>{
     const arrayOfData = data.data
-    main.innerHTML = ''
-    console.log( );
-    // checking wrong names
+    const main = document.getElementById('main')
 
+    main.innerHTML = ''
+
+    // checking wrong names
     if (arrayOfData.length >0){
         // loop for name finder
         for (const name of arrayOfData) {
+            details(name)
             const main = document.getElementById('main')
             const div = document.createElement('div')
-            div.className = 'col-lg-4 col-md-4 col-xl-3  col-sm-12 align-item-center g-2 d-flex justify-content-around'
+            div.className = ' card'
             div.innerHTML = `
-
-            
-            <div class="card mx-auto " style="width: 18rem;">
-                <div class="">
-                    <img src="${name.image}" img class="card-img-top" alt="...">
-                    <div class="card-body ">
-                        <h5 class="card-title">${name.phone_name}</h5>
-                        <a class="btn btn-primary">details</a>
-                    </div>
+                
+                <img class="img rounded" src="img.jpg" width="200px" alt="">
+                <div class=" detailsHolder container">
+                    <h2>card title</h2>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <div class="button"><button class="btn btn-primary  ">Details</button></div>
                 </div>
             
-            </div>
-            <div>
+            `
             
-            </div>
-            <a href="#" ><h2 class="fixed-bottom">^</h2></a>
-      
-
-        `
 
             main.appendChild(div)
         }
@@ -60,4 +57,14 @@ searchBtn.addEventListener('click', function(){
     
 })
 
+
+// details
+
+    const details = (id) => {
+        const URL = `https://openapi.programming-hero.com/api/phone/${id.slug}`
+        fetch(URL)
+            .then(res => res.json())
+            .then(data => console.log(data.data.mainFeatures.sensors[3]))
+    }
+    
 
