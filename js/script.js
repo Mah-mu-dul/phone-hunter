@@ -17,7 +17,7 @@ const brand = (data) =>{
         for (const name of arrayOfData) {
             const main = document.getElementById('main')
             const div = document.createElement('div')
-            div.className = 'col-lg-4 col-sm-12 align-item-center g-2 d-flex justify-content-around'
+            div.className = 'col-lg-4 col-md-4 col-xl-3  col-sm-12 align-item-center g-2 d-flex justify-content-around'
             div.innerHTML = `
 
             
