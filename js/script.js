@@ -21,16 +21,20 @@ const brand = (data) =>{
             div.innerHTML = `
 
             
-            <div class="card  " style="width: 18rem;">
+            <div class="card mx-auto " style="width: 18rem;">
                 <div class="">
                     <img src="${name.image}" img class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body ">
                         <h5 class="card-title">${name.phone_name}</h5>
                         <a class="btn btn-primary">details</a>
                     </div>
                 </div>
             
             </div>
+            <div>
+            
+            </div>
+            <a href="#" ><h2 class="fixed-bottom">^</h2></a>
       
 
         `
