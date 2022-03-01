@@ -1,5 +1,7 @@
 .card{
     padding: 10px;
+    width: 300px;
+    margin: 0,auto;
     background-color: rgba(248, 242, 246, 0.384) !important;
     
 }
@@ -15,6 +17,13 @@
     padding: 1rem;
     margin: 1rem;
 }
-.button{
-    margin: 0,auto;
+.displayDetails{
+    margin: 5%;
+    width: 50%;
+    height: auto;
+    background-color: antiquewhite;
+
+}
+#display{
+    display: none;
 }
