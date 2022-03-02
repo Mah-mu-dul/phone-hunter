@@ -29,12 +29,16 @@
     display: none;
 }
 .features1{
+    display: flex;
+        justify-content: space-around
+
+}
+.MainFeatures{
 }
 .sensor{
 }
+.others{
+}
 .detailsWhole{
-    display: flex;
-    justify-content: space-around
-
 
 }

@@ -78,7 +78,6 @@ const details = (id) => {
 }
 const displayDetails = (data) =>{
     const display = document.getElementById('display')
-    //console.log(data.releaseDate);
 
 
    
@@ -87,25 +86,42 @@ const displayDetails = (data) =>{
     <img src="${data.image}"><br>
     <h1>${data.name}</h1>
     <h4>${data.releaseDate}</h4>
-    <div class="detailsWhole"
+    <div class="detailsWhole">
+
         <div class="features1">
-        <div>
-            <p>Main Features</p>
-            <li>storage : ${data.mainFeatures.storage}</li>
-            <li>displaySize : ${data.mainFeatures.displaySize}</li>
-            <li> chipSet : ${data.mainFeatures.chipSet}</li>
-            <li> memory : ${data.mainFeatures.memory}</li>
-        </div>
-        
-        <div class="sensor"
-            <div class="">
-                <ul id="itemSensor">
-                Sensors
+            <div class="MainFeatures">
+                <h4>Main Features</h4>
+                <li>storage : ${data.mainFeatures.storage}</li>
+                <li>displaySize : ${data.mainFeatures.displaySize}</li>
+                <li> chipSet : ${data.mainFeatures.chipSet}</li>
+                <li> memory : ${data.mainFeatures.memory}</li>
+            </div>
+    
+            <div class="others">
+                <ul id="othersItem">
+                   <h4> others Items</h4>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
                 </ul>
-            </div>     
+            </div>
+
+            <div class="sensor">
+                <ul id="itemSensor">
+                    <h4>Sensors</h4>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                    <li>kibu</li>
+                </ul>
+            </div>
         </div>
-
-
     </div>
     <button id="done" class="btn btn-primary" onclick="noneDisplay()">Done</button>
 
@@ -120,6 +136,18 @@ const displayDetails = (data) =>{
         sensorHolder.appendChild(li)
 
     }
+        // for loop for others 
+    console.log(data.others);
+
+
+    for (const other in data.others) {
+        const otherHolder = document.getElementById("othersItem")
+        const li = document.createElement("li")
+        li.innerHTML = `<p>${other}</p>`
+        otherHolder.appendChild(li)
+
+    }
+
     
 }
     
