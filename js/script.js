@@ -38,12 +38,14 @@ const brand = (data) =>{
                 <div class="mx-auto">
                     <img class="img rounded" src="${name.image}" onclick="details('${name.slug}')" width="200px" alt="">
                     <div class=" detailsHolder container">
-                        <h2>${name.phone_name}</h2>
-                        <ul><h3>Brand: ${name.brand}</h3></ul>
+                        <h2 style="color:tomato;">${name.phone_name}</h2>
+                        <ul><h3 style="color:gold;">Brand: ${name.brand}</h3></ul>
                         <button class="btn btn-primary" onclick="details('${name.slug}'),blockDisplay()">Details</button>
                         
                     </div>
                 </div>
+                <button id="seeMore">see more .... </button>
+
            
 
             
@@ -51,11 +53,14 @@ const brand = (data) =>{
             
             
             main.appendChild(div)
+            document.getElementById('warning').innerText = '    '
+
             
         }
     }
     else{
-        ////console.log('please enter a valid phone name ');
+        console.log('please enter a valid phone name ');
+        document.getElementById('warning').innerText = `No phone found`
     }
 }
 
