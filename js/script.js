@@ -44,7 +44,6 @@ const brand = (data) =>{
                         
                     </div>
                 </div>
-                <button id="seeMore">see more .... </button>
 
            
 
@@ -73,10 +72,12 @@ const searchBtn = document.getElementById('searchBtn')
 searchBtn.addEventListener('click', function(){
     const searchValue = document.getElementById('searchBox')
     phoneSearch(searchValue.value)
-    seeMore()
-    searchValue.innerText = ''
+    clearSearchField()
     
 })
+const clearSearchField = () =>{
+    document.getElementById('searchBox').innerText = ""
+} 
 
 // details
 
@@ -167,8 +168,6 @@ const noneDisplay = () => {
 const blockDisplay =()=> {
     document.getElementById("display").style.display = "block";
 }
-const seeMore = () =>{
-    document.getElementById('seeMore').style.display = 'block'
-}
+
 
 
