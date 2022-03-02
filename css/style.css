@@ -2,11 +2,12 @@
     padding: 10px;
     width: 400px;
     margin: 15px;
-    background-color: rgba(241, 43, 175, 0.397) !important;
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: 2px 1px 20px 5px rgba(57, 98, 223, 0.26);
     
 }
 .cardHolder{
-    background-color: rgba(191, 194, 186, 0.425);
+    background-color: rgba(254, 255, 252, 0.425);
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -22,11 +23,12 @@
     height: 80%;
     overflow: scroll;
     border-radius: 10px;
-    background-color: rgba(247, 249, 250, 0.89);
+    background-color: rgba(184, 219, 236, 0.89);
 
 }
 #display{
     display: none;
+    padding: 3%;
 }
 .features1{
     display: flex;
@@ -46,4 +48,8 @@
     display: none;
     border: 0 ;
     background-color: rgb(255, 255, 255);
+}
+#done{
+    margin-bottom: 20px;
+    margin-left: 20px;
 }

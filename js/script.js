@@ -18,7 +18,7 @@ const brand = (data) =>{
     // checking wrong names
     if (arrayOfData.length >0){
         const sliceArrayOfData = arrayOfData.slice(0,20)
-        console.log(sliceArrayOfData);
+        //console.log(sliceArrayOfData);
         // loop for name finder
         
         for (const name of sliceArrayOfData) {
@@ -32,7 +32,7 @@ const brand = (data) =>{
 
            
 
-            console.log(name);
+            //console.log(name);
             div.innerHTML = `
                 
                 <div class="mx-auto">
@@ -55,7 +55,7 @@ const brand = (data) =>{
         }
     }
     else{
-        //console.log('please enter a valid phone name ');
+        ////console.log('please enter a valid phone name ');
     }
 }
 
@@ -87,10 +87,21 @@ const displayDetails = (data) =>{
 
    
 
+    const releaseDate = (data) => {
+       const releaseDate = (data.releaseDate);
+        if (releaseDate.length > 1){
+             return releaseDate
+        }
+        else{
+            return 'No release date'
+        }
+
+    }
+
     display.innerHTML= `
     <img src="${data.image}"><br>
     <h1>${data.name}</h1>
-    <h4>${data.releaseDate}</h4>
+    <h4>${releaseDate(data)}</h4>
     <div class="detailsWhole">
 
         <div class="features1">
@@ -104,7 +115,7 @@ const displayDetails = (data) =>{
     
             <div class="others">
                 <ul id="othersItem">
-                   <h4> others Items</h4>
+                   <h4> others features</h4>
                     
                 </ul>
             </div>
@@ -123,7 +134,7 @@ const displayDetails = (data) =>{
         // for loop for sensor 
 
     for (const sensor of data.mainFeatures.sensors) {
-        //console.log(sensor);
+        ////console.log(sensor);
         const sensorHolder = document.getElementById("itemSensor")
         const li = document.createElement("li")
         li.innerHTML = `<p>${sensor}</p>`
@@ -131,7 +142,7 @@ const displayDetails = (data) =>{
 
     }
         // for loop for others 
-    console.log(data.others);
+    //console.log(data.others);
 
 
     for (const other in data.others) {
