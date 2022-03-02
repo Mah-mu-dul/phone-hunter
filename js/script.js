@@ -17,26 +17,29 @@ const brand = (data) =>{
 
     // checking wrong names
     if (arrayOfData.length >0){
-
+        const sliceArrayOfData = arrayOfData.slice(0,20)
+        console.log(sliceArrayOfData);
         // loop for name finder
         
-        for (const name of arrayOfData) {
+        for (const name of sliceArrayOfData) {
+            
             
             // details(name)
             const main = document.getElementById('main')
             const div = document.createElement('div')
+            const btn = document.createElement('button')
             div.className = ' card '
 
-            
+           
+
+            console.log(name);
             div.innerHTML = `
                 
                 <div class="mx-auto">
                     <img class="img rounded" src="${name.image}" onclick="details('${name.slug}')" width="200px" alt="">
                     <div class=" detailsHolder container">
                         <h2>${name.phone_name}</h2>
-                        <li>Brand: ${name.brand}</li>
-                        <li>2</li>
-                        <li>3</li>
+                        <ul><h3>Brand: ${name.brand}</h3></ul>
                         <button class="btn btn-primary" onclick="details('${name.slug}'),blockDisplay()">Details</button>
                         
                     </div>
@@ -48,6 +51,7 @@ const brand = (data) =>{
             
             
             main.appendChild(div)
+            
         }
     }
     else{
@@ -64,6 +68,7 @@ const searchBtn = document.getElementById('searchBtn')
 searchBtn.addEventListener('click', function(){
     const searchValue = document.getElementById('searchBox')
     phoneSearch(searchValue.value)
+    seeMore()
     searchValue.innerText = ''
     
 })
@@ -100,25 +105,14 @@ const displayDetails = (data) =>{
             <div class="others">
                 <ul id="othersItem">
                    <h4> others Items</h4>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
+                    
                 </ul>
             </div>
 
             <div class="sensor">
                 <ul id="itemSensor">
                     <h4>Sensors</h4>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
-                    <li>kibu</li>
+                    
                 </ul>
             </div>
         </div>
@@ -156,6 +150,9 @@ const noneDisplay = () => {
 }
 const blockDisplay =()=> {
     document.getElementById("display").style.display = "block";
+}
+const seeMore = () =>{
+    document.getElementById('seeMore').style.display = 'block'
 }
 
 
