@@ -19,11 +19,22 @@
 }
 .displayDetails{
     margin: 5%;
-    width: 50%;
-    height: auto;
+    width: 90%;
+    height: 80%;
+    overflow: scroll;
     background-color: antiquewhite;
 
 }
 #display{
     display: none;
+}
+.features1{
+}
+.sensor{
+}
+.detailsWhole{
+    display: flex;
+    justify-content: space-around
+
+
 }

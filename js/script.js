@@ -18,7 +18,6 @@ const brand = (data) =>{
     // checking wrong names
     if (arrayOfData.length >0){
 
-        
         // loop for name finder
         
         for (const name of arrayOfData) {
@@ -27,11 +26,12 @@ const brand = (data) =>{
             const main = document.getElementById('main')
             const div = document.createElement('div')
             div.className = ' card '
+
             
             div.innerHTML = `
                 
                 <div class="mx-auto">
-                    <img class="img rounded" src="${name.image}" width="200px" alt="">
+                    <img class="img rounded" src="${name.image}" onclick="details('${name.slug}')" width="200px" alt="">
                     <div class=" detailsHolder container">
                         <h2>${name.phone_name}</h2>
                         <li>Brand: ${name.brand}</li>
@@ -51,7 +51,7 @@ const brand = (data) =>{
         }
     }
     else{
-        console.log('please enter a valid phone name ');
+        //console.log('please enter a valid phone name ');
     }
 }
 
@@ -78,42 +78,56 @@ const details = (id) => {
 }
 const displayDetails = (data) =>{
     const display = document.getElementById('display')
+    //console.log(data.releaseDate);
+
+
+   
 
     display.innerHTML= `
     <img src="${data.image}"><br>
     <h1>${data.name}</h1>
-    <p>Main Features</p>
-    <ul>storage : ${data.mainFeatures.storage}</ul>
-    <ul>displaySize : ${data.mainFeatures.displaySize}</ul>
-    <ul> chipSet : ${data.mainFeatures.chipSet}</ul>
-    <ul> memory : ${data.mainFeatures.memory}</ul>
+    <h4>${data.releaseDate}</h4>
+    <div class="detailsWhole"
+        <div class="features1">
+        <div>
+            <p>Main Features</p>
+            <li>storage : ${data.mainFeatures.storage}</li>
+            <li>displaySize : ${data.mainFeatures.displaySize}</li>
+            <li> chipSet : ${data.mainFeatures.chipSet}</li>
+            <li> memory : ${data.mainFeatures.memory}</li>
+        </div>
+        
+        <div class="sensor"
+            <div class="">
+                <ul id="itemSensor">
+                Sensors
+                </ul>
+            </div>     
+        </div>
 
-    <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle"   role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-    Sensors
-  </a>
 
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li class="dropdown-item"  >Action</li>
-    <li class="dropdown-item"  >Another action</li>
-    <li class="dropdown-item"  >Something else here</li>
-  </ul>
-              <button id="done" class="btn btn-primary" onclick="noneDisplay()">Done</button>
-
-</div>
+    </div>
+    <button id="done" class="btn btn-primary" onclick="noneDisplay()">Done</button>
 
     `
+        // for loop for sensor 
+
+    for (const sensor of data.mainFeatures.sensors) {
+        //console.log(sensor);
+        const sensorHolder = document.getElementById("itemSensor")
+        const li = document.createElement("li")
+        li.innerHTML = `<p>${sensor}</p>`
+        sensorHolder.appendChild(li)
+
+    }
+    
 }
     
-function noneDisplay() {
+const noneDisplay = () => {
     document.getElementById("display").style.display = "none";
-    console.log('kicuekta');
-
 }
-function blockDisplay() {
+const blockDisplay =()=> {
     document.getElementById("display").style.display = "block";
-    console.log('kicuekta');
-
 }
 
 
